@@ -1,6 +1,7 @@
 
 footer {
   padding: 20px 0;
+  font-family: "Raleway", sans-serif;
   background-color: #eef1ff;
 }
 
@@ -34,10 +35,11 @@ footer {
   padding: 5px 0;
 }
 
-.footer-info-list span {
+.footer-info-list li a {
   font-size: 28px;
   font-weight: 700;
   color: #aac4ff;
+  cursor: pointer;
 }
 
 .footer-icon-list {
@@ -80,3 +82,44 @@ footer {
   transition: background-color 300ms ease-in-out;
 }
 
+
+/* 1200px 이하 해당 스타일링 적용 */
+@media screen and (max-width : 1200px) {
+  .footer-info-list li a {
+    font-size: 20px;
+  }
+
+  .footer-icon-list img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .footer-link-list,
+  .footer-info-list {
+    font-size: 13px;
+  }
+
+}
+
+
+/* 768px 이하 해당 스타일링 적용 */
+@media screen and (max-width : 768px) {
+  .footer-info-list li a {
+    font-size: 18px;
+  }
+
+  .footer-icon-list img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-link-list,
+  .footer-info-list {
+    font-size: 12px;
+  }
+
+  .footer-icon-list li {
+    margin-right: 0;
+
+  }
+}

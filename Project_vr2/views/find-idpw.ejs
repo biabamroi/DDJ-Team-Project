@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <%- include('./meta.ejs'); -%>
+
+  <title>DDju 아이디/비밀번호 찾기</title>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/find-idpw.css">
+  <link rel="stylesheet" href="../CSS/input_label.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/aside.css">
+
+</head>
+<body>
+  <div class="wrapper" id="top">
+
+    <%- include('./header.ejs', { userLoggedIn }); -%>
+        
+    <main>
+      <div class="find-wrapper">
+        <h1 class="main-logo">
+          <a href="/index">DDju
+            <span>date deajeon is U</span>
+          </a>
+        </h1>
+
+        <div class="find-title">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>아이디/비밀번호 찾기</span>
+        </div>
+
+        <div class="find-center">
+          <form action="/find" method="post" id="nameform">
+            <div class="find-box-item username">
+              <label for="username">이름
+              <!-- <label for="inp" class="inp"> -->
+                <div class="inputbox">
+                  <input type="text" name="username" id="username" placeholder="&nbsp;">
+                  <!-- <span class="label">이름</span> -->
+                  <!-- <div class="focus-bg"></div> -->
+                </div>
+              </label>
+              <p class="warn"></p>
+            </div>
+
+            <div class="find-box-item phone">
+              <!-- <iconify-icon icon="noto:mobile-phone-with-arrow"></iconify-icon> -->
+              <span>휴대전화</span>
+              <div class="inputbox">
+                <select name="country">
+                  <option value="233">가나 +233</option>
+                  <option value="30">그리스 +30</option>
+                  <option value="82" selected>대한민국 +82</option>
+                  <option value="49">독일 +49</option>
+                  <option value="960">몰디브 +960</option>
+                  <option value="1">미국/캐나다 +1</option>
+                  <option value="254">케냐 +254</option>
+                </select>
+              </div>
+
+              <div class="phonenum">
+                <div class="inputbox">
+                  <input type="text" name="phonenum" placeholder="전화번호 입력">
+                </div>
+                <button type="button" id="veribtn" class="btn-primary">인증번호 받기</button>
+              </div>
+
+              <div class="inputbox disinput">
+                <input disabled type="text" id="veritext" name="veritext" placeholder="인증번호를 입력하세요">
+                <div></div>
+              </div>
+              <p class="warn"></p>
+            </div>
+        </div>
+
+        <div class="find-bottom">
+          <button type="submit" id="findbtn" class="btn-primary">아이디/비밀번호 찾기</button>
+        </div>
+      </div>
+    </main>
+
+
+    <%- include('./aside.ejs') -%>
+
+    <%- include('./footer.ejs') -%>
+
+    <%- include('./top-btn.ejs') -%>
+    
+      
+  </div>
+
+  <script src="../JS/header.js"></script>
+  <script src="../JS/find-idpw.js"></script>
+  <script src="../JS/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+  <%- include('./meta.ejs'); -%>
+
+  <title>DDju</title>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/place-details.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/aside.css">
+
+</head>
+<body>
+  <div class="wrapper" id="top">
+
+    <%- include('./header.ejs', { userLoggedIn }); -%>
+
+    <main>
+      <section>
+        <div class="place-details-header">
+          <ul class="place-menu">
+            <li><a href="/today-all">전체</a></li>
+            <li><a href="/today-do">관광지</a></li>
+            <li><a href="/today-eat">맛집</a></li>
+            <li><a href="/today-see">축제/공연</a></li>
+          </ul>
+          <h2 class="title"><%= api[0].title %></h2>
+        </div>
+
+        <hr>
+
+        <div class="place-detail-box">
+          <img src="<%= api[0].img %>" alt="<%= api[0].title %>">
+          <div class="btn-group">
+            <div class="like-btn">
+              <button type="button"><i class="fa-regular fa-heart"></i></button>
+              <button type="button"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <button type="button" class="share-btn"><i class="fa-regular fa-share-from-square"></i></button>
+          </div>
+          <div class="place-detail-txt">
+            <p><%= api[0].overview %></p>
+            <ul class="place-detail-list">
+              <li class="place-detail-item">
+                <strong>주소 :</strong>
+                <span><%= api[0].addr1 %> <%= api[0].addr2 %></span>
+              </li>
+              <li class="place-detail-item">
+                <strong>영업시간 :</strong>
+                <span><%= api[0].opentime %></span>
+              </li>
+              <li class="place-detail-item">
+                <strong>문의 및 안내 :</strong>
+                <span><%= api[0].infocenter %></span>
+              </li>
+              <li class="place-detail-item">
+                <strong>홈페이지 :</strong>
+                <span><a href="<%= api[0].hmpg %>"><%= api[0].hmpg %></a></span>
+              </li>
+            </ul>
+            <ul class="keywords-list">
+              <li>#키워드</li>
+              <li>#키워드</li>
+              <li>#키워드</li>
+              <li>#키워드</li>
+            </ul>
+          </div>
+          <div id="map" style="width:760px;height:400px;margin:20px 10px;"></div>
+        </div>
+      </section>
+      
+      <hr>
+
+      <section>
+        <div class="review-box">
+          <div class="review-title">
+            <p>후기</p>
+            <span></span>
+          </div>
+          <form action="/place-details/<%= api[0]._id %>" method="POST" id="review-form">
+            <div class="write-review">
+              <div class="star-rating">
+                <label for="">
+                  <input type="radio" name="star" class="star" value="1">
+                  <i class="fa-solid fa-star"></i>
+                </label>
+                <label for="">
+                  <input type="radio" name="star" class="star" value="2">
+                  <i class="fa-solid fa-star"></i>
+                </label>
+                <label for="">
+                  <input type="radio" name="star" class="star" value="3">
+                  <i class="fa-solid fa-star"></i>
+                </label>
+                <label for="">
+                  <input type="radio" name="star" class="star" value="4">
+                  <i class="fa-solid fa-star"></i>
+                </label>
+                <label for="">
+                  <input type="radio" name="star" class="star" value="5">
+                  <i class="fa-solid fa-star"></i>
+                </label>
+              </div>
+              <textarea name="reviewTxt" id="review-txt" placeholder="후기를 적어주세요."></textarea>
+            </div>
+
+            <button type="submit" class="review-btn">작성하기</button>
+          </form>
+
+            <ul class="review-list">
+              <% if(review.length == 0) { %>
+                
+              <% } else { %>
+                <% for(let i = 0; i < review.length; i++) { %>
+                  <li class="review-item">
+                    <div class="user-info">
+                      <img src="../images/kumdori .jpg" alt="프로필 사진">
+                      <p>이름</p>
+                    </div>
+                    <div class="review">
+                      <div class="star-rating">
+                        <% for(let j = 1; j <= review[i].star; j++) { %>
+                          <i class="fa-solid fa-star" style="color: #FBC85B;"></i>
+                        <% } %>
+                        <% for(let j = 1; j <= 5 - review[i].star; j++) { %>
+                          <i class="fa-solid fa-star"></i>
+                        <% } %>
+                      </div>
+                      <p><%= review[i].review %></p>
+                    </div>
+                    <p><%= review[i].date %></p>
+                  </li>
+                <% } %>
+              <% } %>
+            </ul>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./aside.ejs') -%>
+
+    <%- include('./footer.ejs') -%>
+
+    <%- include('./top-btn.ejs') -%>
+
+  </div>
+
+  <!-- 카카오 맵 api 연결 -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b30aabb752a0a95816e403bb318ea0b1"></script>
+	<script>
+    // 받아온 데이터 배열로 생성
+    let apiArray = <%- JSON.stringify(api[0]) %>;
+
+    // 지도 생성 및 위도, 경도 설정
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(apiArray.mapy, apiArray.mapx),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+
+    // 지도에 마커 생성 및 나타내기
+    var markerPosition  = new kakao.maps.LatLng(apiArray.mapy, apiArray.mapx); 
+
+    var marker = new kakao.maps.Marker({
+        position: markerPosition
+    });
+
+    marker.setMap(map);
+
+    
+    // 해당하는 .place-menu li 색 변경
+    if(apiArray.contenttypeid == '39') {
+      $('.place-menu li').eq(2).find('a').css('color', '#AAC4FF');
+    } else if(apiArray.contenttypeid == '15') {
+      $('.place-menu li').eq(3).find('a').css('color', '#AAC4FF');
+    } else {
+      $('.place-menu li').eq(1).find('a').css('color', '#AAC4FF');
+    }
+
+
+    // 행사, 축제일 때 상세설명
+    if(apiArray.contenttypeid == '15') {
+      $('.place-detail-list').html(`
+        <li class="place-detail-item">
+          <strong>행사 시작일 :</strong>
+          <span>${apiArray.startdate}</span>
+        </li>
+        <li class="place-detail-item">
+          <strong>행사 종료일 :</strong>
+          <span>${apiArray.enddate}</span>
+        </li>
+        <li class="place-detail-item">
+          <strong>행사 장소 :</strong>
+          <span>${apiArray.eventplace}</span>
+        </li>
+        <li class="place-detail-item">
+          <strong>홈페이지 :</strong>
+          <span><a href="${apiArray.hmpg}">${apiArray.hmpg}</a></span>
+        </li>
+      `);
+    }
+
+    // .like-btn 눌렀을 때 on class toggle
+    $('.like-btn').on('click', function(){
+      $(this).toggleClass('on');
+    })
+
+    // .share-btn 눌렀을 때 현재 페이지 url 복사하기
+    $('.share-btn').on('click', function(){
+      let currentUrl = window.document.location.href;
+      window.navigator.clipboard.writeText(currentUrl)
+      .then(() => {
+        alert('url이 복사되었습니다');
+      });
+    })
+
+    // 리뷰 건수 count
+    let reviewCount = $('.review-list').children().length;
+    $('.review-title span').text(`총 ${reviewCount}건`);
+
+
+    // 리뷰 작성 칸 별점 체크
+    $('.star-rating label').on('click', function(){
+      $('.star-rating label').removeClass('on');
+      // this 전에 있는 label에 on class add
+      $(this).addClass('on').prevAll('label').addClass('on');
+      
+      $('.star-rating input[type="radio"]').prop('checked', false);
+      $(this).children('input[type="radio"]').prop('checked', true);
+    })
+
+    // review-btn 눌렀을 때 후기txt, 별점 값 없으면 alert 창 띄우고 submit 막기
+    $('.review-btn').on('click', function(e){
+      if($('input[name=star]:checked').val() == undefined || $('#review-txt').val() == '') {
+        e.preventDefault();
+        alert('후기를 작성하세요');
+      } else {
+        $('.search-btn').submit();
+      }
+    })
+	</script>
+
+  <script src="../JS/header.js"></script>
+  <script src="../JS/footer.js"></script>
+  <script src="../JS/sidebar.js"></script>
+
+</body>
+</html>

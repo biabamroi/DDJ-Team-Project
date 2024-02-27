@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+        
+  <%- include('./meta.ejs'); -%>
+
+  <title>DDju</title>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/course-details.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/aside.css">
+
+</head>
+<body>
+  <div class="wrapper" id="top">
+    
+    <%- include('./header.ejs', { userLoggedIn }); -%>
+
+    <main>
+      <section>
+        <h2 class="title">맛집투어</h2>
+        
+        <hr>
+      
+        <div class="map-rain">
+          <div id="map" style="width:100%;height:400px;margin:20px 0;border:1px solid black;"></div>
+        </div>
+        <div class="map-wrap">
+          <span>대전 지역을 대상으로 한 지역 유명 음식은 특별히 기억되는 것이 없다는 것이다. 대전에는 정말 유명한 음식이 없을까? 대전은 맛있는 음식이 없는 것이 아니다. 워낙 입맛이 까다롭기로 소문난 지역이라 왠만한 음식은 맛있다고 말할 수 없기에 대전의 맛집을 찾는 것은 쉽지 않다.<br> 최근 대전에서도 특색 있는 맛과 가성비로 사랑받는 맛집이 있다. 식도락 여행객을 위한 주목받는 대전에서 손꼽히는 대표 맛집을 소개합니다.</span>
+          <div class="icon-group">
+            <div class="like-btn">
+              <button type="button"><i class="fa-regular fa-heart"></i></button>
+              <button type="button"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <button class="share-btn" type="button"><i class="fa-regular fa-share-from-square"></i></button>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <div class="place-detail-box">
+          <div class="txt-wrap">
+            <h2>성심당</h2>
+          </div>
+          <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjBfMjY2/MDAxNTg5OTQwNDQzMzcz.WNFQCRWTCDUoNQEXc0h9mVPJC_cjIwtbCzX322TVgREg.Kx8PyT1upSyT2AmWpi4RqcRZ8K1exVNH6Y3AttUOLPkg.JPEG.haram4th/work-029137.jpg?type=w800" alt="장소 사진">        
+          <div class="place-detail-txt">
+            <p>성심당은 대전광역시에 위치한 베이커리 전문점</p>
+            <ul class="place-detail-list">
+              <li class="place-detail-item">
+                <strong>주소 :</strong>
+                <span class="location">대전광역시 중구 대종로 480번길 15(은행동)</span>
+              </li>
+              <li class="place-detail-item">
+                <strong>영업시간 :</strong>
+                <span class="time">08:00 ~ 22:00(월~일)</span>
+              </li>
+              <li class="place-detail-item">
+                <strong>문의 및 안내 :</strong>
+                <span class="call">042-220-4120</span>
+              </li>
+              <li class="place-detail-item">
+                <strong>홈페이지 :</strong>
+                <span class="page"><a href="https://www.sungsimdangmall.co.kr/cscenter/search_market.asp">https://www.sungsimdangmall.co.kr/cscenter/search_market.asp</a></span>
+              </li>
+            </ul>
+            <ul class="keywords-list">
+              <li>#키워드</li>
+              <li>#키워드</li>
+              <li>#키워드</li>
+              <li>#키워드</li>
+            </ul>
+          </div>
+          <div class="place-map"></div>
+        </div>
+        <div class="map-list">
+          <!-- <div class="map-item">
+            <p>코스 후기</p>
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <%- include('./aside.ejs') -%>
+
+    <%- include('./footer.ejs') -%>
+
+    <%- include('./top-btn.ejs') -%>
+      
+  </div>
+
+  <!-- 카카오 맵 -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b30aabb752a0a95816e403bb318ea0b1"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(36.32764900781793, 127.42727992623006),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+
+    var marker = new kakao.maps.Marker({ 
+    position: map.getCenter() 
+    });
+    marker.setMap(map);
+	</script>
+
+  <script src="../JS/header.js"></script>
+  <script src="../JS/footer.js"></script>
+  <script src="../JS/sidebar.js"></script>
+  <script src="../JS/course-details.js"></script>
+</body>
+</html>

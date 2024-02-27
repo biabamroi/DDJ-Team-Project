@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+  <%- include('./meta.ejs'); -%>
+  
+  <title>찜 페이지</title>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/zzim.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/aside.css">
+
+</head>
+<body>
+  <div class="wrapper" id="top">
+
+    <%- include('./header.ejs', { userLoggedIn }); -%>
+
+    <main>
+      <div class="zzim-header">
+        <i class="fa-regular fa-heart"></i>
+        <p>찜 목록</p>
+      </div>
+      <hr>
+      
+      <section>
+        <div class="zzim-place">
+          <div class="place-title">
+            <p>데이트 장소</p>
+          </div>
+          <div class="zzim-place-count">
+            <i class="fa-solid fa-heart"></i>
+            <p>6</p>
+          </div>
+        </div>
+
+        <div class="zzim-place-list">
+          <div class="zzim-place-item">
+              <img src="../images/데이트코스1.jpg" alt="한빛탑">
+              <div class="zzim-text">
+                <p>한빛탑</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="zzim-place-item">
+              <img src="./images/공원.jpg" alt="한밭수목원">
+              <div class="zzim-text">
+                <p>한밭수목원</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="zzim-place-item">
+              <img src="../images/카페.jpg" alt="카페">
+              <div class="zzim-text">
+                <p>카페</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="zzim-place-item">
+              <img src="../images/데이트코스1.jpg" alt="한빛탑">
+              <div class="zzim-text">
+                <p>한빛탑</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="zzim-place-item">
+              <img src="../images/공원.jpg" alt="한밭수목원">
+              <div class="zzim-text">
+                <p>한밭수목원</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="zzim-place-item">
+              <img src="../images/카페.jpg" alt="카페">
+              <div class="zzim-text">
+                <p>카페</p>
+                <div class="like-btn">
+                  <button type="button"><i class="fa-regular fa-heart"></i></button>
+                  <button type="button"><i class="fa-solid fa-heart"></i></button>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="zzim-course">
+          <div class="course-title">
+            <p>데이트 코스</p>
+          </div>
+          <div class="zzim-course-count">
+            <i class="fa-solid fa-heart"></i>
+            <p>4</p>
+          </div>
+        </div>
+
+          <div class="zzim-course-list">
+            <div class="zzim-course-item">
+
+                <img src="../images/section1-background.jpg" alt="한밭수목원">
+                <div class="zzim-text">
+                  <p>비오는 날 더 가고싶은</p>
+                  <div class="like-btn">
+                    <button type="button"><i class="fa-regular fa-heart"></i></button>
+                    <button type="button"><i class="fa-solid fa-heart"></i></button>
+                  </div>
+                </div>
+
+            </div>
+            <div class="zzim-course-item">
+
+                <img src="../images/Expo.jpg" alt="엑스포">
+                <div class="zzim-text">
+                  <p>영화에 나온 그 곳!</p>
+                  <div class="like-btn">
+                    <button type="button"><i class="fa-regular fa-heart"></i></button>
+                    <button type="button"><i class="fa-solid fa-heart"></i></button>
+                  </div>
+                </div>
+
+            </div>
+            <div class="zzim-course-item">
+
+                <img src="../images/section1-background.jpg" alt="한밭수목원">
+                <div class="zzim-text">
+                  <p>비오는 날 더 가고싶은</p>
+                  <div class="like-btn">
+                    <button type="button"><i class="fa-regular fa-heart"></i></button>
+                    <button type="button"><i class="fa-solid fa-heart"></i></button>
+                  </div>
+                </div>
+
+            </div>
+            <div class="zzim-course-item">
+
+                <img src="../images/Expo.jpg" alt="엑스포">
+                <div class="zzim-text">
+                  <p>영화에 나온 그 곳!</p>
+                  <div class="like-btn">
+                    <button type="button"><i class="fa-regular fa-heart"></i></button>
+                    <button type="button"><i class="fa-solid fa-heart"></i></button>
+                  </div>
+                </div>
+
+            </div>
+            
+          </div>
+        </section>
+      
+    </main>
+
+    
+    <%- include('./aside.ejs') -%>
+
+    <%- include('./footer.ejs') -%>
+
+    <%- include('./top-btn.ejs') -%>
+
+  </div>
+
+  <script src="../JS/zzim.js"></script>
+  <script src="../JS/header.js"></script>
+  <script src="../JS/footer.js"></script>
+  <script src="../JS/sidebar.js"></script>
+
+</body>
+</html>

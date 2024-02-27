@@ -1,0 +1,149 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.title {
+  font-size: 48px;
+  font-family: 'Gowun Dodum', sans-serif;
+  margin: 0 10px;
+}
+
+.place-menu {
+  display: flex;
+  margin: 10px 0;
+}
+
+.place-menu li {
+  position: relative;
+  padding: 0 10px;
+}
+
+.place-menu li a {
+  color: #666;
+}
+
+.place-menu li::before {
+  content: "";
+  width: 2px;
+  height: 15px;
+  background-color: #ccc;
+  position: absolute;
+  top: 3px;
+  left: 0;
+} 
+
+.place-menu li:first-child::before {
+  content: none;
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  color: #666;
+}
+
+#district {
+  padding: 0 20px;
+  font-size: 14px;
+  color: #666;
+  border: none;
+  outline: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.order-menu p {
+  position: relative;
+  padding: 5px 8px;
+}
+
+.order-menu p::after {
+  content: "";
+  width: 2px;
+  height: 14px;
+  background-color: #ccc;
+  position: absolute;
+  top: 8px;
+  left: 0;
+} 
+
+.order-menu:first-child p::after {
+  content: none;
+}
+
+.place-list {
+  width: 800px;
+  margin: 20px auto;
+}
+
+.place-item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+} 
+
+.place-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.place-item .text-box {
+  margin: 0 20px;
+}
+
+.place-item .text-box h3 {
+  padding: 10px;
+}
+
+.place-item .text-box p {
+  width: 520px;
+  height: 65px;
+  padding: 0 10px;
+  /* 3줄만 보이게 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.keywords-list {
+  display: flex;
+  margin: 10px;
+}
+
+.keywords-list li {
+  margin-right: 15px;
+  padding:  5px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #AAC4FF;
+}
+
+.place-item-btn {
+  display: block;
+  margin: 40px auto;
+}
+
+.selected {
+  color: #AAC4FF;
+}

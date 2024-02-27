@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+      
+  <%- include('./meta.ejs'); -%>
+
+  <title>DDju 로그인</title>
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/header.css">
+  <link rel="stylesheet" href="../CSS/login.css">
+  <link rel="stylesheet" href="../CSS/input_label.css">
+  <link rel="stylesheet" href="../CSS/footer.css">
+  <link rel="stylesheet" href="../CSS/aside.css">
+
+</head>
+<body>
+  <div class="wrapper" id="top">
+
+    <%- include('./header.ejs', { userLoggedIn }); -%>
+        
+    <main>
+      <div class="login-wrap">
+        <h1 class="main-logo">
+          <a href="/index">DDju
+            <span>date deajeon is U</span>
+          </a>
+        </h1>
+
+        <div class="login-center">
+          <form action="/login" method="post" id="login-form">
+            <div class="login-box-item userid">
+              <label for="userid" class="inp">
+                <div class="inputbox">
+                  <input type="text" name="userid" id="userid" placeholder="&nbsp;">
+                  <span class="label">아이디</span>
+                  <div class="focus-bg"></div>
+                </div>
+              </label>
+              <p class="warn"></p>
+            </div>
+    
+            <div class="login-box-item userpw">
+              <label for="userpw" class="inp">
+                <div class="inputbox">
+                  <input type="password" name="userpw" id="userpw" placeholder="&nbsp;">
+                  <span class="label">비밀번호</span>
+                  <div class="focus-bg"></div>
+                </div>
+              </label>
+              <p class="warn"></p>
+            </div>
+        </div>
+
+        <div class="login-bottom">
+          <button type="submit" id="loginbtn" class="btn-primary">로그인</button>
+          <div class="login-list-wrap">
+            <span><a href="/find-idpw">아이디/비밀번호 찾기</a></span>
+            <span><a href="/join">회원가입하기</a></span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <%- include('./aside.ejs') -%>
+
+    <%- include('./footer.ejs') -%>
+
+    <%- include('./top-btn.ejs') -%>
+
+  </div>
+
+  <style>
+    /* 포커스 */
+    input:focus { outline: none !important; border-color: #AAC4FF; box-shadow: 0 0.5px 3px #AAC4FF; }
+  </style>
+
+  <script src="../JS/header.js"></script>
+  <script src="../JS/login.js"></script>
+  <script src="../JS/footer.js"></script>
+
+</body>
+</html>
