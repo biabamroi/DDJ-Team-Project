@@ -1,0 +1,128 @@
+main {
+  width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.place-header {
+  margin-top: 80px;
+}
+
+.place-header .title {
+  font-size: 48px;
+  font-family: 'Gowun Dodum', sans-serif;
+  margin: 0 10px;
+}
+
+.place-header .place-menu {
+  display: flex;
+  margin: 10px 0;
+}
+
+.place-header .place-menu li {
+  position: relative;
+  padding: 0 10px;
+}
+
+.place-header .place-menu li a {
+  color: #666;
+}
+
+.place-header .place-menu li::before {
+  content: "";
+  width: 2px;
+  height: 15px;
+  background-color: #ccc;
+  position: absolute;
+  top: 3px;
+  left: 0;
+} 
+
+.place-header .place-menu li:first-child::before {
+  content: none;
+}
+
+.place-header .select {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  color: #666;
+}
+
+.place-header .order {
+  display: flex;
+}
+.place-header .order p {
+  padding-left: 20px;
+  position: relative;
+}
+
+.place-header .order p::after {
+  content: "";
+  width: 2px;
+  height: 15px;
+  background-color: #ccc;
+  position: absolute;
+  top: 3px;
+  left: 10px;
+}
+
+.place-header .order p:first-child::after {
+  content: none;
+}
+
+.place-header #district {
+  border: none;
+  padding: 0 20px;
+  color: #666;
+}
+
+.place-list {
+  width: 800px;
+  margin: 20px auto;
+}
+
+.place-item {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+} 
+
+.place-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.place-item .text-box {
+  margin: 0 20px;
+}
+
+.place-item .text-box h3 {
+  padding: 10px;
+}
+
+.place-item .text-box p {
+  padding: 10px;
+}
+
+.keywords-list {
+  display: flex;
+  margin: 10px;
+}
+
+.keywords-list li {
+  margin-right: 15px;
+  padding:  5px 10px;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #AAC4FF;
+}
+

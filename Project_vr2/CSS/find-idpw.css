@@ -1,0 +1,136 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 100px 0;
+  padding: 60px 0;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+}
+
+.find-title {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  width: 65%;
+}
+
+.find-title i {
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.find-title span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #bbb;
+}
+
+.find-center {
+  margin-top: 40px;
+}
+
+.find-box-list {
+  max-width: 468px;
+  margin: 0 auto;
+}
+
+
+
+.phonenum,
+.postnum {
+  display: flex;
+  align-items: center;
+}
+
+.phonenum .inputbox,
+.postnum .inputbox {
+  width: calc(100% - 120px);
+  margin-right: 5px;
+}
+
+.phonenum button,
+.postnum button {
+  width: 115px;
+  height: 52px;
+  margin-top: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.inputbox select {
+  width: 100%;
+  font-size: 16px;
+  color: #777;
+  border: none;
+  outline: none;
+}
+
+.disinput,
+.disinput input {
+  cursor: not-allowed;
+  background-color: #f7f7f7;
+}
+
+.disagree {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.disagree::before,
+.disagree::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  left: 50%;
+  top: 50%;
+}
+
+.disagree::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.disagree::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.find-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-bottom button {
+  width: 340px;
+  height: 50px;
+  margin-top: 10px;
+  padding-left: 15px;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+  background-color: #AAC4FF;
+  color: white;
+  font-size: 16px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #aac4ff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,52 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 600px;
+  margin: 100px 0;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+}
+
+.inputbox {
+  width: 300px;
+}
+
+.login-center {
+  margin-top: 40px;
+}
+
+.login-bottom button {
+  width: 300px;
+  height: 40px;
+  margin: 20px 0;
+  border: 1px solid #AAC4FF;
+  border-radius: 10px;
+  background-color: #AAC4FF;
+  color: white;
+  font-size: 15px;
+}
+
+.login-list-wrap {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.login-list-wrap > span:first-child > a {
+  margin-right: 10px;
+  color: black;
+}
+
+.login-list-wrap > span:last-child > a {
+  font-weight: 700;
+  color: #AAC4FF;
+}

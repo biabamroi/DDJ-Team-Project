@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+main video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profiles-btn {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profiles-btn button{
+  font-size: 30px;
+  color: #57b2e7;
+  font-weight: 700;
+  font-family: 'Nanum Pen Script', cursive;
+  cursor: pointer;
+}
+
+.profiles-btn button i {
+  color: rgb(178, 226, 194);
+  font-size: 25px;
+}
+
+.profile-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: space-between;
+  width: 900px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile {
+  width: 250px;
+  text-align: center;
+}
+
+.profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.profile h1 {
+  font: bold 22px/1 "arial";
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile p {
+  font: 14px/1 "arial";
+  color: #999;
+  margin-bottom: 50px;
+}
+
+.contact {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.contact li {
+  /* width: 30%; */
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.contact li:last-child {
+  border-bottom: none;
+}
+
+.contact li i {
+  width: 20%;
+  text-align: center;
+  color: #555;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px #ddd;
+}
+
+.contact li span {
+  font: 12px/1 "obitrion";
+  color: #555;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.line {
+  height: 400px;
+  margin-top: 15px;
+  border-left: 2px dashed #ccc;
+}
+
+.txt {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.others {
+  z-index: 100;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.others p {
+  color: #999;
+}
+
+.others-btn {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+}
+
+.others-btn button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 5px;
+  opacity: 1;
+}
+
+.others-btn button {
+  opacity: 0.5;
+}
+
+.others-btn button.on {
+  opacity: 1;
+}
+
+.others-btn button:nth-of-type(1) {
+  background-color: rgb(154, 214, 255);
+  box-shadow: 5px 5px 5px rgba(118, 199, 231, 0.5);
+}
+
+.others-btn button:nth-of-type(2) {
+  background-color: hsl(337, 70%, 71%);
+  box-shadow: 5px 5px 5px rgba(233, 169, 194, 0.5);
+}
+
+.others-btn button:nth-of-type(3) {
+  background-color: rgb(139, 212, 123);
+  box-shadow: 5px 5px 5px rgba(157, 224, 150, 0.5);
+}
+
+.others-btn button:nth-of-type(4) {
+  background-color: rgb(164, 130, 184);
+  box-shadow: 5px 5px 5px rgba(214, 103, 190, 0.5);
+}
